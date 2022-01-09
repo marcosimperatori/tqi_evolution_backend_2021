@@ -24,26 +24,27 @@ Uma melhoria que pode ser implementada, é criar endpoints para que os administr
 
  ## Tecnologias e ferramentas utilizadas:
 
-    1 - Java: a api foi implementa utilizando a linguagem Java, por meio da IDE InteliJ;
+    **Java:** a api foi implementa utilizando a linguagem Java, por meio da IDE InteliJ;
 
-    2 - Spring Boot: utilizei esse framework dada a facilidade de montar a estrutura do projeto inicial e adicição de novos start's se for o caso. Como gerenciador de dependências optei pelo Maven.
+    **Spring Boot:** utilizei esse framework dada a facilidade de montar a estrutura do projeto inicial e adicição de novos start's se for o caso. Como gerenciador de dependências optei pelo Maven.
 
-    3 - Postgres como banco de dados;
+    **Postgres** como banco de dados;
 
-    4 - Docker para subir um container do PostgresSql, facilitando a configuração do ambiente. Após baixar as imagens do Postgres e pgadmin4, rodei os seguinte comandos no terminal:
+    **Docker** para subir um container do PostgresSql, facilitando a configuração do ambiente. Após baixar as imagens do Postgres e pgadmin4, rodei os seguinte comandos no terminal:
 
-    4.1 - Criando uma rede para comunicação entres os container's:
+    Criando uma rede para comunicação entres os container's:
 
-    ```js  docker network create --driver bridge postgres-network ```
+    js  docker network create --driver bridge postgres-network
 
-    4.2 - Criando o container postgres: 
+    
+    Criando o container postgres: 
 
-    ```js docker run --name marcos -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=docker --network=postgres-network -p 7777:5432 -V /tmp/database:/var/lib/postgresql/data postgres ```
+    js docker run --name marcos -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=docker --network=postgres-network -p 7777:5432 -V /tmp/database:/var/lib/postgresql/data postgres
 
 
-    4.3 - Criando o container para o pgadmin4, pois dessa forma fica mais para acompanhar tanto os comandos DDL, quanto os comandos DML:
+    Criando o container para o pgadmin4, pois dessa forma fica mais para acompanhar tanto os comandos DDL, quanto os comandos DML:
 
-    ```js  docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=seu_email_aqui@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=docker" -d dpage/pgadmin4 ```
+    docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=seu_email_aqui@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=docker" -d dpage/pgadmin4
 
 
 
