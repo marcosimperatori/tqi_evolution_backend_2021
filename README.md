@@ -1,7 +1,7 @@
 # tqi_evolution_backend_2021
 
 ## Solução: 
-Minha sugestão para o caso apresentado é uma API-REST com Spring Boot, pois poderá ser consumida facilmente por qualquer cliente. Pensei neste modelo porque acredito que seria "relativamente" fácil implementar uma solução front-end para consumí-la, usando por exemplo, HTML, CSS e Ajax.
+Minha sugestão para o caso apresentado é uma API-REST com Spring Boot, pois poderá ser consumida facilmente por qualquer cliente. Pensei neste modelo porque acredito que seria "relativamente" fácil implementar uma solução front-end para consumí-la usando, por exemplo, HTML, CSS e Ajax.
 
 ## Funcionamento:
 
@@ -34,21 +34,18 @@ Uma melhoria que pode ser implementada, é criar endpoints para que os administr
 
     4.1 - Criando uma rede para comunicação entres os container's:
 
-    ``` docker network create --driver bridge postgres-network ```
+    ```js  docker network create --driver bridge postgres-network ```
 
     4.2 - Criando o container postgres: 
 
-    ``` docker run --name marcos -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=docker --network=postgres-network -p 7777:5432 -V /tmp/database:/var/lib/postgresql/data postgres ```
+    ```js docker run --name marcos -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=docker --network=postgres-network -p 7777:5432 -V /tmp/database:/var/lib/postgresql/data postgres ```
 
 
     4.3 - Criando o container para o pgadmin4, pois dessa forma fica mais para acompanhar tanto os comandos DDL, quanto os comandos DML:
 
-    ``` docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=seu_email_aqui@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=docker" -d dpage/pgadmin4 ```
+    ```js  docker run --name pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=seu_email_aqui@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=docker" -d dpage/pgadmin4 ```
 
 
-## Endpoints
-
-![endpoints disponíveis](endpoints.JPG)
 
 
 
